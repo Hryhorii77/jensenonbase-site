@@ -2,6 +2,20 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="$JENSEN — the founder coin paired with Coinbase tokenized NVIDIA (NVDAc) on Base. Unofficial tribute. Not NVIDIA. Not Jensen Huang." />
+<link rel="canonical" href="https://jensenonbase.fun/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://jensenonbase.fun/" />
+<meta property="og:title" content="$JENSEN — founder coin on Base" />
+<meta property="og:description" content="The founder coin paired with Coinbase tokenized NVIDIA on Base. Unofficial tribute. Not NVIDIA. Not Jensen Huang." />
+<meta property="og:image" content="https://jensenonbase.fun/assets/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="$JENSEN — founder coin on Base" />
+<meta name="twitter:description" content="The founder coin paired with Coinbase tokenized NVIDIA on Base. Unofficial tribute. Not NVIDIA. Not Jensen Huang." />
+<meta name="twitter:image" content="https://jensenonbase.fun/assets/og-image.jpg" />
+
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,6 +25,9 @@
 <nav class="nav">
   <div class="wrap">
     <div class="nav-brand">$JENSEN</div>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
     <div class="nav-links">
       <a href="thesis.html">Thesis</a>
       <a href="#pair">The pair</a>
@@ -36,7 +53,7 @@
 
     <div class="btn-row" style="justify-content:center;">
       <a class="btn btn-primary" data-buy href="#" target="_blank" rel="noopener">Buy $JENSEN</a>
-      <a class="btn btn-disabled" data-tg href="#" aria-disabled="true" target="_blank" rel="noopener">Telegram — soon</a>
+      <a class="btn btn-ghost" data-tg href="#" aria-disabled="true" target="_blank" rel="noopener">Telegram — soon</a>
       <a class="btn btn-ghost" data-afterbook href="#" target="_blank" rel="noopener">View Afterbook ↗</a>
     </div>
   </div>
@@ -60,12 +77,91 @@
       <div class="tick-label">24h Vol</div>
       <div class="tick-value" id="tick-vol">—</div>
     </div>
-    <div class="tick">
-      <div class="tick-label">Afterbook Basis</div>
-      <div class="tick-value">—</div>
-    </div>
   </div>
 </div>
+
+<section id="pair">
+  <div class="wrap">
+    <div class="eyebrow">The pair</div>
+    <h2 class="section-title">Why NVDAc, not WETH.</h2>
+    <p class="lede">
+      Most founder coins pair against whatever quote asset happens to be sitting in the
+      deployer wallet. $JENSEN pairs against NVDAc — Coinbase's tokenized NVIDIA share, live
+      on Base. After hours, when NYSE is closed, that book still trades — that's why
+      <a data-afterbook href="#" target="_blank" rel="noopener" style="color:var(--accent);">Afterbook</a> exists.
+    </p>
+  </div>
+</section>
+
+<section id="how-to-buy">
+  <div class="wrap">
+    <div class="eyebrow">How to buy</div>
+    <h2 class="section-title">Four steps. No lookalikes.</h2>
+    <ul class="steps">
+      <li><span class="step-num">1</span><br />Use a Base wallet — Base App, Coinbase Wallet, Rabby. Network Base, not Ethereum mainnet.</li>
+      <li><span class="step-num">2</span><br />Paste only this CA: <span style="font-family:'SFMono-Regular',Menlo,monospace; font-size:12px;" data-ca-text>0x8485…9ba3</span></li>
+      <li><span class="step-num">3</span><br />Swap into JENSEN. You'll spend NVDAc — not "NVIDIA from NYSE."</li>
+      <li><span class="step-num">4</span><br />If the ticker is JENSEN but the CA is different — it's a fake.</li>
+    </ul>
+    <div class="btn-row" style="margin-top:22px;">
+      <a class="btn btn-primary" data-buy href="#" target="_blank" rel="noopener">Buy on Dexscreener ↗</a>
+      <a class="btn btn-ghost" data-uniswap href="#" target="_blank" rel="noopener">Uniswap (advanced) ↗</a>
+      <a class="btn btn-ghost" data-bankr href="#" target="_blank" rel="noopener">Bankr ↗</a>
+    </div>
+    <p class="data-note">
+      The Dexscreener link lands you on the correct pair first. The pool is JENSEN / NVDAc —
+      if a route defaults to WETH, that's the wrong pool.
+    </p>
+    <p class="warn-line">
+      There are other tokens using a "JENSEN" ticker on Base and Solana that are not this one.
+      The contract address is the name — <span style="font-family:'SFMono-Regular',Menlo,monospace;" data-ca-text>0x8485…9ba3</span> or it isn't $JENSEN.
+    </p>
+  </div>
+</section>
+
+<section id="chart">
+  <div class="wrap">
+    <div class="eyebrow">Live chart</div>
+    <h2 class="section-title">The tape, not a screenshot.</h2>
+    <div class="chart-embed">
+      <iframe data-dex-embed src="" title="$JENSEN / NVDAc live chart" loading="lazy"></iframe>
+    </div>
+    <p class="data-note">
+      Chart not loading? Pool is new and thin — Dexscreener's own charting can lag for it.
+      <a data-dex href="#" target="_blank" rel="noopener">Open it directly on Dexscreener ↗</a>
+    </p>
+  </div>
+</section>
+
+<section id="pair-details">
+  <div class="wrap">
+    <div class="eyebrow">Pool details</div>
+    <h2 class="section-title">Everything about the pair.</h2>
+    <div class="two-col" style="margin-top:10px;">
+      <div class="card">
+        <h3 style="font-size:14px; letter-spacing:0.08em; color:var(--fg-dim); margin-bottom:14px;">POOL FACTS</h3>
+        <div class="fact-row"><span>Chain</span><span>Base</span></div>
+        <div class="fact-row"><span>Pair</span><span>JENSEN / NVDAc</span></div>
+        <div class="fact-row"><span>Contract</span><span data-ca-text>0x8485…9ba3</span></div>
+        <div class="fact-row"><span>NVDAc contract</span><span><a data-nvdac href="#" target="_blank" rel="noopener">Basescan ↗</a></span></div>
+        <div class="fact-row"><span>Chart</span><span><a data-dex href="#" target="_blank" rel="noopener">Dexscreener ↗</a></span></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:14px; letter-spacing:0.08em; color:var(--fg-dim); margin-bottom:14px;">THE AFTER-HOURS TAPE</h3>
+        <p style="color:var(--fg-dim); font-size:14px; margin-bottom:16px;">
+          NYSE closes. NVDAc keeps trading on Base. Afterbook tracks that after-hours book —
+          the basis between NVDAc and the last print — so the pool isn't flying blind overnight.
+        </p>
+        <a class="btn btn-ghost" data-afterbook href="#" target="_blank" rel="noopener">Open Afterbook ↗</a>
+      </div>
+    </div>
+    <p class="data-note">
+      Holding $JENSEN ≠ holding NVDAc ≠ holding NVDA. JENSEN is a separate ERC-20 that trades
+      against NVDAc — it does not represent NVDAc, and NVDAc does not represent NVIDIA shares held
+      in a brokerage account.
+    </p>
+  </div>
+</section>
 
 <section id="token">
   <div class="wrap">
@@ -91,45 +187,6 @@
       Uniswap v4 pool manager (where the LP position actually lives):
       <a data-pool-manager href="#" target="_blank" rel="noopener">0x498581fF718922c3f8e6A244956aF099B2652b2b ↗</a>.
       That address showing a large JENSEN balance is the pool, not a whale wallet.
-    </p>
-  </div>
-</section>
-
-<section id="pair">
-  <div class="wrap">
-    <div class="eyebrow">The pair</div>
-    <h2 class="section-title">Why NVDAc, not WETH.</h2>
-    <p class="lede">
-      Most founder coins pair against whatever quote asset happens to be sitting in the
-      deployer wallet. $JENSEN pairs against NVDAc — Coinbase's tokenized NVIDIA share, live
-      on Base. The pool tracks a real, priced asset instead of a random meme quote.
-    </p>
-    <div class="two-col" style="margin-top:30px;">
-      <div class="card">
-        <h3 style="font-size:14px; letter-spacing:0.08em; color:var(--fg-dim); margin-bottom:14px;">POOL FACTS</h3>
-        <div class="fact-row"><span>Chain</span><span>Base</span></div>
-        <div class="fact-row"><span>Pair</span><span>JENSEN / NVDAc</span></div>
-        <div class="fact-row"><span>Contract</span><span data-ca-text>0x8485…9ba3</span></div>
-        <div class="fact-row"><span>NVDAc contract</span><span><a data-nvdac href="#" target="_blank" rel="noopener">Basescan ↗</a></span></div>
-        <div class="fact-row"><span>Chart</span><span><a data-dex href="#" target="_blank" rel="noopener">Dexscreener ↗</a></span></div>
-      </div>
-      <div class="card">
-        <h3 style="font-size:14px; letter-spacing:0.08em; color:var(--fg-dim); margin-bottom:14px;">THE AFTER-HOURS TAPE</h3>
-        <p style="color:var(--fg-dim); font-size:14px; margin-bottom:16px;">
-          NYSE closes. NVDAc keeps trading on Base. Afterbook tracks that after-hours book —
-          the basis between NVDAc and the last print — so the pool isn't flying blind overnight.
-        </p>
-        <a class="btn btn-ghost" data-afterbook href="#" target="_blank" rel="noopener">Open Afterbook ↗</a>
-      </div>
-    </div>
-    <p class="lede" style="margin-top:26px; font-size:15px;">
-      Most founder coins sit on WETH. $JENSEN sits on the same Base book as tokenized NVIDIA.
-      After hours, that book still trades — that's why Afterbook exists.
-    </p>
-    <p class="data-note">
-      Holding $JENSEN ≠ holding NVDAc ≠ holding NVDA. JENSEN is a separate ERC-20 that trades
-      against NVDAc — it does not represent NVDAc, and NVDAc does not represent NVIDIA shares held
-      in a brokerage account.
     </p>
   </div>
 </section>
@@ -180,39 +237,17 @@
   </div>
 </section>
 
-<section id="how-to-buy">
-  <div class="wrap">
-    <div class="eyebrow">How to buy</div>
-    <h2 class="section-title">Four steps. No lookalikes.</h2>
-    <ul class="steps">
-      <li><span class="step-num">1</span><br />Use a Base wallet — Base App, Coinbase Wallet, Rabby. Network Base, not Ethereum mainnet.</li>
-      <li><span class="step-num">2</span><br />Paste only this CA: <span style="font-family:'SFMono-Regular',Menlo,monospace; font-size:12px;" data-ca-text>0x8485…9ba3</span></li>
-      <li><span class="step-num">3</span><br />Swap into JENSEN on Dexscreener, Bankr, or Uniswap on Base. You'll spend NVDAc — not "NVIDIA from NYSE."</li>
-      <li><span class="step-num">4</span><br />If the ticker is JENSEN but the CA is different — it's a fake.</li>
-    </ul>
-    <p class="warn-line">
-      There are other tokens using a "JENSEN" ticker on Base and Solana that are not this one.
-      The contract address is the name — <span style="font-family:'SFMono-Regular',Menlo,monospace;" data-ca-text>0x8485…9ba3</span> or it isn't $JENSEN.
-    </p>
-  </div>
-</section>
-
 <section id="jacket">
   <div class="wrap">
     <div class="eyebrow">The jacket</div>
     <h2 class="section-title">The pack wears green.</h2>
-    <p class="lede">Post with #JENSEN. Real community, no AI headshots of anyone real.</p>
+    <p class="lede">
+      There's no wall of posts yet because we're not faking one. Post with #JENSEN on Telegram
+      or X and be one of the first faces on it.
+    </p>
     <div class="btn-row" style="margin-top:20px;">
-      <a class="btn btn-disabled" data-tg href="#" aria-disabled="true" target="_blank" rel="noopener">Telegram — soon</a>
-      <a class="btn btn-disabled" data-tw href="#" aria-disabled="true" target="_blank" rel="noopener">X — soon</a>
-    </div>
-    <div class="jacket-wall">
-      <div class="wall-slot"><svg viewBox="0 0 64 64" fill="none"><path d="M14 22 L24 14 L32 24 L40 14 L50 22 L50 52 L14 52 Z" fill="#76b900"/><line x1="32" y1="24" x2="32" y2="52" stroke="#131313" stroke-width="2"/></svg></div>
-      <div class="wall-slot"><svg viewBox="0 0 64 64" fill="none"><path d="M14 22 L24 14 L32 24 L40 14 L50 22 L50 52 L14 52 Z" fill="#76b900"/><line x1="32" y1="24" x2="32" y2="52" stroke="#131313" stroke-width="2"/></svg></div>
-      <div class="wall-slot"><svg viewBox="0 0 64 64" fill="none"><path d="M14 22 L24 14 L32 24 L40 14 L50 22 L50 52 L14 52 Z" fill="#76b900"/><line x1="32" y1="24" x2="32" y2="52" stroke="#131313" stroke-width="2"/></svg></div>
-      <div class="wall-slot"><svg viewBox="0 0 64 64" fill="none"><path d="M14 22 L24 14 L32 24 L40 14 L50 22 L50 52 L14 52 Z" fill="#76b900"/><line x1="32" y1="24" x2="32" y2="52" stroke="#131313" stroke-width="2"/></svg></div>
-      <div class="wall-slot"><svg viewBox="0 0 64 64" fill="none"><path d="M14 22 L24 14 L32 24 L40 14 L50 22 L50 52 L14 52 Z" fill="#76b900"/><line x1="32" y1="24" x2="32" y2="52" stroke="#131313" stroke-width="2"/></svg></div>
-      <div class="wall-slot"><svg viewBox="0 0 64 64" fill="none"><path d="M14 22 L24 14 L32 24 L40 14 L50 22 L50 52 L14 52 Z" fill="#76b900"/><line x1="32" y1="24" x2="32" y2="52" stroke="#131313" stroke-width="2"/></svg></div>
+      <a class="btn btn-ghost" data-tg href="#" aria-disabled="true" target="_blank" rel="noopener">Telegram — soon</a>
+      <a class="btn btn-ghost" data-tw href="#" aria-disabled="true" target="_blank" rel="noopener">X — soon</a>
     </div>
   </div>
 </section>
@@ -286,7 +321,7 @@
       <a href="thesis.html">Thesis</a>
       <a href="#faq">FAQ</a>
       <a data-tg href="#" aria-disabled="true" target="_blank" rel="noopener">Telegram</a>
-      <a data-tw href="#" aria-disabled="true" target="_blank" rel="noopener">X</a>
+      <a data-tw href="#" aria-disabled="true" target="_blank" rel="noopener">X (Creator)</a>
       <a data-basescan href="#" target="_blank" rel="noopener">Basescan</a>
       <a data-bankr href="#" target="_blank" rel="noopener">Bankr</a>
     </div>

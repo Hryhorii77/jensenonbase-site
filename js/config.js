@@ -44,5 +44,11 @@ JENSEN.basescanNvdac = `https://basescan.org/token/${JENSEN.nvdac.ca}`;
 JENSEN.basescanVestBeneficiary = `https://basescan.org/address/${JENSEN.vestBeneficiary}`;
 JENSEN.basescanPoolManager = `https://basescan.org/address/${JENSEN.poolManager}`;
 JENSEN.dexscreenerUrl = `https://dexscreener.com/${JENSEN.chain}/${JENSEN.poolId}`;
+JENSEN.dexscreenerEmbedUrl = `https://dexscreener.com/${JENSEN.chain}/${JENSEN.poolId}?embed=1&theme=dark&trades=0&info=0`;
 JENSEN.dexscreenerTokenUrl = `https://dexscreener.com/${JENSEN.chain}/${JENSEN.ca}`;
-JENSEN.uniswapUrl = `https://app.uniswap.org/swap?outputCurrency=${JENSEN.ca}&chain=${JENSEN.chain}`;
+// This pool is JENSEN/NVDAc, not JENSEN/WETH — routing without an explicit
+// inputCurrency lets Uniswap default to WETH and often fails to find a route.
+JENSEN.uniswapUrl = `https://app.uniswap.org/swap?outputCurrency=${JENSEN.ca}&inputCurrency=${JENSEN.nvdac.ca}&chain=${JENSEN.chain}`;
+// Primary buy CTA goes to the Dexscreener pair page first — it shows the correct
+// pair before anyone routes into a swap, so people don't land on the wrong pool.
+JENSEN.buyUrl = JENSEN.dexscreenerUrl;

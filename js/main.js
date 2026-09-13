@@ -63,10 +63,12 @@ function wireSocials() {
 }
 
 function wireLinks() {
-  document.querySelectorAll("[data-buy]").forEach((el) => (el.href = JENSEN.uniswapUrl));
+  document.querySelectorAll("[data-buy]").forEach((el) => (el.href = JENSEN.buyUrl));
+  document.querySelectorAll("[data-uniswap]").forEach((el) => (el.href = JENSEN.uniswapUrl));
   document.querySelectorAll("[data-basescan]").forEach((el) => (el.href = JENSEN.basescanToken));
   document.querySelectorAll("[data-dex]").forEach((el) => (el.href = JENSEN.dexscreenerUrl));
   document.querySelectorAll("[data-dex-token]").forEach((el) => (el.href = JENSEN.dexscreenerTokenUrl));
+  document.querySelectorAll("[data-dex-embed]").forEach((el) => (el.src = JENSEN.dexscreenerEmbedUrl));
   document.querySelectorAll("[data-afterbook]").forEach((el) => (el.href = JENSEN.afterbookUrl));
   document.querySelectorAll("[data-launch-tx]").forEach((el) => (el.href = JENSEN.basescanLaunchTx));
   document.querySelectorAll("[data-nvdac]").forEach((el) => (el.href = JENSEN.basescanNvdac));
@@ -109,10 +111,27 @@ function wireCopyButton() {
   });
 }
 
+function wireMobileNav() {
+  const toggle = document.querySelector(".nav-toggle");
+  const links = document.querySelector(".nav-links");
+  if (!toggle || !links) return;
+  toggle.addEventListener("click", () => {
+    const open = links.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  links.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      links.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    })
+  );
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   wireLinks();
   wireSocials();
   wireCopyButton();
   wireDataRowCopy();
+  wireMobileNav();
   loadTicker();
 });
