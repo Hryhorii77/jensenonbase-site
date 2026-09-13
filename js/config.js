@@ -44,8 +44,11 @@ JENSEN.basescanNvdac = `https://basescan.org/token/${JENSEN.nvdac.ca}`;
 JENSEN.basescanVestBeneficiary = `https://basescan.org/address/${JENSEN.vestBeneficiary}`;
 JENSEN.basescanPoolManager = `https://basescan.org/address/${JENSEN.poolManager}`;
 JENSEN.dexscreenerUrl = `https://dexscreener.com/${JENSEN.chain}/${JENSEN.poolId}`;
-JENSEN.dexscreenerEmbedUrl = `https://dexscreener.com/${JENSEN.chain}/${JENSEN.poolId}?embed=1&theme=dark&trades=0&info=0`;
 JENSEN.dexscreenerTokenUrl = `https://dexscreener.com/${JENSEN.chain}/${JENSEN.ca}`;
+// Dexscreener's own chart panel gets stuck on "Loading pair..." for this specific
+// pool (confirmed on dexscreener.com itself, not an embed-only issue) — GeckoTerminal
+// renders real candles for the same pool, so that's what's actually embedded.
+JENSEN.chartEmbedUrl = `https://www.geckoterminal.com/${JENSEN.chain}/pools/${JENSEN.poolId}?embed=1&info=0&swaps=0`;
 // This pool is JENSEN/NVDAc, not JENSEN/WETH — routing without an explicit
 // inputCurrency lets Uniswap default to WETH and often fails to find a route.
 JENSEN.uniswapUrl = `https://app.uniswap.org/swap?outputCurrency=${JENSEN.ca}&inputCurrency=${JENSEN.nvdac.ca}&chain=${JENSEN.chain}`;

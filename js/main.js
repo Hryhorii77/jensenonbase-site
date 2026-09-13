@@ -68,7 +68,7 @@ function wireLinks() {
   document.querySelectorAll("[data-basescan]").forEach((el) => (el.href = JENSEN.basescanToken));
   document.querySelectorAll("[data-dex]").forEach((el) => (el.href = JENSEN.dexscreenerUrl));
   document.querySelectorAll("[data-dex-token]").forEach((el) => (el.href = JENSEN.dexscreenerTokenUrl));
-  document.querySelectorAll("[data-dex-embed]").forEach((el) => (el.src = JENSEN.dexscreenerEmbedUrl));
+  document.querySelectorAll("[data-dex-embed]").forEach((el) => (el.src = JENSEN.chartEmbedUrl));
   document.querySelectorAll("[data-afterbook]").forEach((el) => (el.href = JENSEN.afterbookUrl));
   document.querySelectorAll("[data-launch-tx]").forEach((el) => (el.href = JENSEN.basescanLaunchTx));
   document.querySelectorAll("[data-nvdac]").forEach((el) => (el.href = JENSEN.basescanNvdac));
