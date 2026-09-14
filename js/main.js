@@ -127,11 +127,41 @@ function wireMobileNav() {
   );
 }
 
+function renderCommunityWall() {
+  const container = document.getElementById("wall-embeds");
+  const emptyMsg = document.getElementById("jacket-empty-msg");
+  const posts = (JENSEN.communityPosts || []).filter(Boolean);
+  if (!container || posts.length === 0) return;
+
+  if (emptyMsg) emptyMsg.style.display = "none";
+
+  posts.forEach((url) => {
+    const blockquote = document.createElement("blockquote");
+    blockquote.className = "twitter-tweet";
+    blockquote.setAttribute("data-theme", "dark");
+    blockquote.setAttribute("data-conversation", "none");
+    const a = document.createElement("a");
+    a.href = url;
+    blockquote.appendChild(a);
+    container.appendChild(blockquote);
+  });
+
+  const script = document.createElement("script");
+  script.src = "https://platform.x.com/widgets.js";
+  script.async = true;
+  script.charset = "utf-8";
+  script.onload = () => {
+    if (window.twttr && window.twttr.widgets) window.twttr.widgets.load(container);
+  };
+  document.body.appendChild(script);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   wireLinks();
   wireSocials();
   wireCopyButton();
   wireDataRowCopy();
   wireMobileNav();
+  renderCommunityWall();
   loadTicker();
 });
