@@ -36,7 +36,10 @@ const JENSEN = {
   twitter: "https://x.com/hryhorii77",
   // Real posts only — each URL is embedded live via X's own widget, not a screenshot.
   // Add more as they come in; leave empty and the "no wall yet" message shows instead.
-  communityPosts: ["https://x.com/hryhorii77/status/2099261384890388591"],
+  communityPosts: [
+    "https://x.com/hryhorii77/status/2099261384890388591",
+    "https://x.com/hryhorii77/status/2099622215041909088",
+  ],
   afterbookUrl: "https://afterbook-lake.vercel.app",
   bankrUrl: "https://bankr.bot/",
 };
