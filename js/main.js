@@ -136,6 +136,8 @@ function renderCommunityWall() {
   if (emptyMsg) emptyMsg.style.display = "none";
 
   posts.forEach((url) => {
+    const card = document.createElement("div");
+    card.className = "wall-card";
     const blockquote = document.createElement("blockquote");
     blockquote.className = "twitter-tweet";
     blockquote.setAttribute("data-theme", "dark");
@@ -144,7 +146,8 @@ function renderCommunityWall() {
     const a = document.createElement("a");
     a.href = url;
     blockquote.appendChild(a);
-    container.appendChild(blockquote);
+    card.appendChild(blockquote);
+    container.appendChild(card);
   });
 
   const script = document.createElement("script");
