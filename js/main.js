@@ -71,6 +71,7 @@ function wireLinks() {
   document.querySelectorAll("[data-dex-embed]").forEach((el) => (el.src = JENSEN.chartEmbedUrl));
   document.querySelectorAll("[data-afterbook]").forEach((el) => (el.href = JENSEN.afterbookUrl));
   document.querySelectorAll("[data-launch-tx]").forEach((el) => (el.href = JENSEN.basescanLaunchTx));
+  document.querySelectorAll("[data-burn-tx]").forEach((el) => (el.href = JENSEN.basescanBurnTx));
   document.querySelectorAll("[data-nvdac]").forEach((el) => (el.href = JENSEN.basescanNvdac));
   document.querySelectorAll("[data-bankr]").forEach((el) => (el.href = JENSEN.bankrUrl));
   document.querySelectorAll("[data-vest-addr]").forEach((el) => (el.href = JENSEN.basescanVestBeneficiary));

@@ -22,6 +22,12 @@ const JENSEN = {
   launchMechanism: "Bankr scheduled multicurve, Uniswap v4",
   launchTx: "0x3d5d60e1ed09775ea13ffc6d8bfb7d2596ef5157778cee8eb649c818033bdb8b",
 
+  // First on-chain burn — verified on Basescan (tagged "Burn", Sep-15-2026 11:29:37 AM UTC).
+  // 40,000,000 JENSEN on a 100B supply is 0.04% — a ritual, not a supply shock. Don't call it one.
+  burnTx: "0xa34079f41c1148fdadac94439ca98f5bd93dd89063ea655206de21b3168a50ac",
+  burnAmount: "40,000,000",
+  burnDate: "15 Sep 2026",
+
   // Verified directly from the launch tx's event log on Basescan (not the generic
   // Bankr default) — see VestingScheduleCreated / VestingAllocated / Transfer events.
   supplyToPool: "85,000,000,000",
@@ -40,12 +46,23 @@ const JENSEN = {
     "https://x.com/hryhorii77/status/2099261384890388591",
     "https://x.com/hryhorii77/status/2098784785371980194",
   ],
-  afterbookUrl: "https://afterbook-lake.vercel.app",
+  afterbookUrl: "https://afterbook.app",
   bankrUrl: "https://bankr.bot/",
+
+  // Last-known snapshot so the ticker never shows bare "—" before the live fetch lands.
+  // Baked into the HTML too (see index.html) for anyone/anything that doesn't run JS.
+  // Snapshot taken 15 Sep 2026 — will drift; JS overwrites it with live data on load either way.
+  fallback: {
+    price: "$0.0000002682",
+    mc: "$26.8K",
+    liq: "$22.2K",
+    vol: "$3.3K",
+  },
 };
 
 JENSEN.basescanToken = `https://basescan.org/token/${JENSEN.ca}`;
 JENSEN.basescanLaunchTx = `https://basescan.org/tx/${JENSEN.launchTx}`;
+JENSEN.basescanBurnTx = `https://basescan.org/tx/${JENSEN.burnTx}`;
 JENSEN.basescanNvdac = `https://basescan.org/token/${JENSEN.nvdac.ca}`;
 JENSEN.basescanVestBeneficiary = `https://basescan.org/address/${JENSEN.vestBeneficiary}`;
 JENSEN.basescanPoolManager = `https://basescan.org/address/${JENSEN.poolManager}`;
