@@ -379,13 +379,23 @@ section { padding: 70px 0; border-bottom: 1px solid var(--border); }
 
 /* FAQ */
 .wall-embeds {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  column-count: 1;
+  column-gap: 20px;
   margin-top: 28px;
 }
+@media (min-width: 640px) {
+  .wall-embeds { column-count: 2; }
+}
+@media (min-width: 1000px) {
+  .wall-embeds { column-count: 3; }
+}
 .wall-embeds:empty { display: none; }
-.wall-embeds .twitter-tweet { margin: 0 !important; }
+.wall-embeds .twitter-tweet {
+  margin: 0 0 20px !important;
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+}
 
 .faq-list { display: flex; flex-direction: column; gap: 2px; margin-top: 24px; }
 .faq-item {

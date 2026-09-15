@@ -140,6 +140,7 @@ function renderCommunityWall() {
     blockquote.className = "twitter-tweet";
     blockquote.setAttribute("data-theme", "dark");
     blockquote.setAttribute("data-conversation", "none");
+    blockquote.setAttribute("data-width", "260");
     const a = document.createElement("a");
     a.href = url;
     blockquote.appendChild(a);
