@@ -400,6 +400,21 @@ section { padding: 70px 0; border-bottom: 1px solid var(--border); }
   border-radius: 6px;
   display: flex;
   justify-content: center;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.wall-card::-webkit-scrollbar {
+  width: 6px;
+}
+.wall-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+.wall-card::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+.wall-card::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dim);
 }
 .wall-embeds .twitter-tweet {
   margin: 0 !important;
