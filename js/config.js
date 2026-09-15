@@ -45,6 +45,7 @@ const JENSEN = {
   communityPosts: [
     "https://x.com/hryhorii77/status/2099261384890388591",
     "https://x.com/hryhorii77/status/2098784785371980194",
+    "https://x.com/hryhorii77/status/2099870627800760468",
   ],
   afterbookUrl: "https://afterbook.app",
   bankrUrl: "https://bankr.bot/",
